@@ -1,10 +1,13 @@
 name: Auto Build
 
 on:
-  push
+  push:
+    tags:
+      - 'v*'
 
 jobs:
   build:
+    name: Build OSX
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
